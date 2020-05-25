@@ -1,0 +1,23 @@
+package com.pac.www;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Demo {
+
+	public static void main(String[] args) {
+
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+       driver.get("http://amazon.in");
+       driver.findElement(By.linkText("Pantry")).click();
+      WebElement wb=driver.findElement(By.cssSelector("#nav-subnav > a:nth-child(7) > span.nav-a-content"));
+      Select s=new Select(wb);
+      s.selectByVisibleText("Make Up");
+      s.click();
+	}
+
+}

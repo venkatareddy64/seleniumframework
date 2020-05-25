@@ -1,0 +1,13 @@
+package PomTest;
+
+import org.testng.annotations.Test;
+
+public class Driven {
+  @Test
+  public void driven() throws Exception {
+	  WebDriver driver=BrowserFactory.startBrowser("Chrome", "http://amazon.in");
+
+	  
+	  Reporter.log("Amazon Login Test is Successfull...",true);	  
+  }
+}

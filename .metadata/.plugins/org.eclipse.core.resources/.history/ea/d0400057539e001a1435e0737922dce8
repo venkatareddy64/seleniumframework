@@ -1,0 +1,13 @@
+package PomPage;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class Demo {
+  @Test
+  public void search() {
+	  WebDriver driver=BrowserFactory.startBrowser("Chrome","http://ebay.com");
+	  ClasEbay ce=new ClasEbay();
+	  ce.fncatSearch(Books, Selenium);
+  }
+}

@@ -1,0 +1,32 @@
+package PomPage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class ClasEbay {
+	public static WebDriver wd;
+	public ClasEbay(WebDriver d)
+	{
+		wd=d;
+	}
+	By catagory=By.id("gh-cat");
+	By text=By.id("gh-ac");
+	By btn=By.id("gh-btn");
+	public void fnSearch(String prod)
+	{
+		wd.findElement(text).sendKeys(prod);
+		wd.findElement(text).click();
+	}
+	public void fncatSearch(String cat,String pName)
+	{
+		WebElement wb=wd.findElement(catagory);
+	    Select s=new Select(wb);
+	    s.selectByVisibleText(cat);
+	    fnSearch(pName);
+	
+	}
+	
+
+}
